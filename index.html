@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AppHub — Your team's tools, all in one place</title>
 <meta name="description" content="A branded portal where small teams upload, share, and use tools built with AI. Drag an HTML file, give it a name, your team uses it in 30 seconds.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
@@ -74,8 +75,9 @@ html.themed .culture-section,
 html.themed .pricing-card,
 html.themed .origin-card,
 html.themed .trust-bar,
-html.themed footer {
-  transition: background-color .3s ease, border-color .3s ease, color .2s ease, box-shadow .3s ease;
+html.themed footer,
+html.themed .nav-logo-img {
+  transition: background-color .3s ease, border-color .3s ease, color .2s ease, box-shadow .3s ease, filter .3s ease;
 }
 
 /* ─── Base ─── */
@@ -87,8 +89,9 @@ a:hover{text-decoration:underline}
 
 /* ─── Nav ─── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.nav-logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--text);text-decoration:none}
-.logo-mark{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;font-weight:700;font-size:14px;font-family:'Space Grotesk',sans-serif}
+.nav-logo{display:flex;align-items:center;text-decoration:none}
+.nav-logo-img{height:32px;width:auto;display:block}
+[data-theme="dark"] .nav-logo-img{filter:invert(1)}
 .nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{color:var(--muted);font-size:14px;font-weight:500;text-decoration:none;transition:color .2s}
 .nav-links a:hover{color:var(--text);text-decoration:none}
@@ -193,7 +196,7 @@ section{padding:100px 32px;max-width:1080px;margin:0 auto}
 /* ─── Pricing ─── */
 .pricing-section{text-align:center}
 .pricing-section .section-sub{margin:0 auto 32px}
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:780px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1080px;margin:0 auto}
 .pricing-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:40px 28px;box-shadow:var(--shadow-md);display:flex;flex-direction:column;text-align:left}
 .pricing-card.featured{border-color:var(--accent);box-shadow:var(--shadow-md),0 0 0 1px var(--accent-glow)}
 .pricing-card .plan-name{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:12px}
@@ -266,7 +269,7 @@ footer .f-copy{font-size:13px;color:var(--muted)}
 
 <!-- Nav -->
 <nav class="nav">
-  <a href="#" class="nav-logo"><span class="logo-mark">A</span> AppHub</a>
+  <a href="#" class="nav-logo"><img src="apphubLogo.png" alt="AppHub" class="nav-logo-img"></a>
   <div class="nav-links">
     <a href="#problem">Problem</a>
     <a href="#how-it-works">How It Works</a>
@@ -458,34 +461,52 @@ footer .f-copy{font-size:13px;color:var(--muted)}
     <div class="pricing-card reveal">
       <div class="plan-name">Free</div>
       <div class="price">$0</div>
-      <div class="price-sub">Everything you need to get started. No strings&nbsp;attached.</div>
+      <div class="price-sub">Get started with the basics. No credit card&nbsp;required.</div>
       <ul class="pricing-features">
-        <li>Up to 10 hosted apps</li>
-        <li>Up to 5 team members</li>
+        <li>Up to 5 hosted apps</li>
+        <li>Up to 3 team members</li>
         <li>Branded workspace</li>
         <li>Drag-and-drop HTML uploads</li>
         <li>Password-protected portal</li>
-        <li class="disabled">Smart AI uploads</li>
-        <li class="disabled">Unlimited apps</li>
-        <li class="disabled">Unlimited team size</li>
+        <li class="disabled">AI conversions</li>
+        <li class="disabled">Custom branding</li>
+        <li class="disabled">Priority support</li>
       </ul>
       <a href="#get-started" class="btn-secondary">Start free</a>
     </div>
     <div class="pricing-card featured reveal">
-      <div class="plan-name">Pro <span class="pricing-badge">Popular</span></div>
-      <div class="price">$5 <span>/ month</span></div>
-      <div class="price-sub">For teams that build with AI every day and want zero&nbsp;friction.</div>
+      <div class="plan-name">Team <span class="pricing-badge">Popular</span></div>
+      <div class="price">$12 <span>/ month</span></div>
+      <div class="price-sub">For growing teams that build with AI every&nbsp;day.</div>
       <ul class="pricing-features">
-        <li>Unlimited hosted apps</li>
-        <li>Unlimited team members</li>
+        <li>Up to 50 hosted apps</li>
+        <li>Up to 15 team members</li>
+        <li>20 AI conversions per month</li>
         <li>Branded workspace</li>
         <li>Drag-and-drop HTML uploads</li>
         <li>Password-protected portal</li>
-        <li>Smart AI uploads — drop a JSX, zip, or any LLM output and it converts to a working HTML app client&#8209;side</li>
-        <li>Monthly AI token allowance per&nbsp;user</li>
-        <li>Priority support</li>
+        <li>Smart AI uploads</li>
+        <li class="disabled">Custom branding</li>
+        <li class="disabled">Priority support</li>
       </ul>
       <a href="#get-started" class="btn-primary">Start free, upgrade anytime</a>
+    </div>
+    <div class="pricing-card reveal">
+      <div class="plan-name">Business</div>
+      <div class="price">$29 <span>/ month</span></div>
+      <div class="price-sub">For teams that need everything — no&nbsp;limits.</div>
+      <ul class="pricing-features">
+        <li>Unlimited hosted apps</li>
+        <li>Unlimited team members</li>
+        <li>100 AI conversions per month</li>
+        <li>Custom branding</li>
+        <li>Priority support</li>
+        <li>Branded workspace</li>
+        <li>Drag-and-drop HTML uploads</li>
+        <li>Password-protected portal</li>
+        <li>Smart AI uploads</li>
+      </ul>
+      <a href="#get-started" class="btn-primary">Get started</a>
     </div>
   </div>
 </section>
@@ -507,12 +528,12 @@ footer .f-copy{font-size:13px;color:var(--muted)}
   <div style="max-width:1080px;margin:0 auto;padding:0 32px">
     <p class="section-label reveal">Get started</p>
     <h2 class="section-heading reveal">Give your team a place to&nbsp;build</h2>
-    <p class="section-sub reveal" style="margin:0 auto">Drop your email and we'll create your free workspace — up to 10&nbsp;apps, up to 5&nbsp;team&nbsp;members, no credit card&nbsp;required.</p>
+    <p class="section-sub reveal" style="margin:0 auto">Drop your email and we'll create your free workspace — up to 5&nbsp;apps, up to 3&nbsp;team&nbsp;members, no credit card&nbsp;required.</p>
     <div class="ea-form reveal">
       <input type="email" placeholder="you@company.com" aria-label="Email address">
       <button class="btn-primary" type="button" onclick="this.textContent='You\'re in \u2713';this.disabled=true;this.style.opacity='.7'">Create my workspace</button>
     </div>
-    <p class="ea-note reveal">Free forever on the Free plan. Upgrade to Pro anytime for $5/month.</p>
+    <p class="ea-note reveal">Free forever on the Free plan. Upgrade to Team ($12/mo) or Business ($29/mo) anytime.</p>
   </div>
 </section>
 
