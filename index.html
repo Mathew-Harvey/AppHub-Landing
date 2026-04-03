@@ -357,6 +357,15 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
 }
 .browser-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong) }
 .browser-frame img { width: 100%; display: block }
+.showcase-visual { position: relative }
+.showcase-overlay {
+  position: absolute; bottom: -24px; right: -24px; width: 55%;
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+}
+.showcase-overlay img { width: 100%; display: block; border-radius: var(--radius) }
 [data-theme="light"] .img-dark,
 [data-theme="dark"] .img-light { display: none }
 
@@ -747,7 +756,10 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       <div class="browser-bar">
         <span class="browser-dot"></span><span class="browser-dot"></span><span class="browser-dot"></span>
       </div>
-      <img src="assets/image3.png" alt="AppHub app viewer — running calculator" loading="lazy">
+      <img src="assets/image8.png" alt="AppHub apps dashboard" loading="lazy">
+    </div>
+    <div class="showcase-overlay">
+      <img src="assets/image.png" alt="AppHub note editor dialog" loading="lazy">
     </div>
   </div>
 </div>
