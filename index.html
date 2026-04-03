@@ -469,8 +469,8 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
 .pricing-section { text-align: center }
 .pricing-section .section-sub { margin: 0 auto 40px }
 .pricing-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 24px; max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px; max-width: 1400px; margin: 0 auto;
 }
 .pricing-card {
   position: relative;
@@ -571,7 +571,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .steps-grid { grid-template-columns: repeat(2, 1fr) }
   .steps-grid::after { display: none }
   .features-grid { grid-template-columns: repeat(2, 1fr) }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 440px }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 880px }
   .stats-bar { grid-template-columns: repeat(2, 1fr) }
   .stat-item:nth-child(2) { border-right: none }
   .stat-item:nth-child(1),
@@ -590,6 +590,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .hero h1 { font-size: 28px }
   .hero-sub { font-size: 16px }
   .showcase { padding: 80px 20px }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px }
   .steps-grid { grid-template-columns: 1fr; gap: 32px }
   .features-grid { grid-template-columns: 1fr }
   .stats-bar { grid-template-columns: 1fr }
@@ -887,6 +888,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
         <li>Drag-and-drop HTML uploads</li>
         <li>Password-protected portal</li>
         <li class="disabled">AI conversions</li>
+        <li class="disabled">AI app building</li>
         <li class="disabled">Custom branding</li>
         <li class="disabled">Priority support</li>
       </ul>
@@ -904,6 +906,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
         <li>Drag-and-drop HTML uploads</li>
         <li>Password-protected portal</li>
         <li>Smart AI uploads</li>
+        <li class="disabled">AI app building</li>
         <li class="disabled">Custom branding</li>
       </ul>
       <a href="https://apphub-web.onrender.com/register" class="btn-primary">Start free, upgrade anytime</a>
@@ -911,16 +914,30 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
     <div class="pricing-card reveal">
       <div class="plan-name">Business</div>
       <div class="price">$29 <span>/ month</span></div>
-      <div class="price-sub">Everything — no limits.</div>
+      <div class="price-sub">Build apps with AI — at&nbsp;scale.</div>
       <ul class="pricing-features">
         <li>Unlimited hosted apps</li>
         <li>Unlimited team members</li>
         <li>100 AI conversions / month</li>
+        <li>AI app building (500K tokens / mo)</li>
         <li>Custom branding</li>
         <li>Priority support</li>
         <li>Branded workspace</li>
         <li>Drag-and-drop HTML uploads</li>
         <li>Password-protected portal</li>
+      </ul>
+      <a href="https://apphub-web.onrender.com/register" class="btn-primary">Get started</a>
+    </div>
+    <div class="pricing-card reveal">
+      <div class="plan-name">Power User</div>
+      <div class="price">$79 <span>/ month</span></div>
+      <div class="price-sub">Build without limits.</div>
+      <ul class="pricing-features">
+        <li>Everything in Business</li>
+        <li>Unlimited AI app building</li>
+        <li>Unlimited iterations</li>
+        <li>No token limits</li>
+        <li>Dedicated support channel</li>
       </ul>
       <a href="https://apphub-web.onrender.com/register" class="btn-primary">Get started</a>
     </div>
@@ -937,7 +954,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       <a href="https://apphub-web.onrender.com/register" class="btn-primary">Create free workspace</a>
       <a href="https://apphub-web.onrender.com/login" class="btn-secondary">Log in</a>
     </div>
-    <p class="cta-note reveal">Free forever on the Free plan. Upgrade to Team ($12/mo) or Business ($29/mo) anytime.</p>
+    <p class="cta-note reveal">Free forever on the Free plan. Upgrade to Team ($12/mo), Business ($29/mo), or Power User ($79/mo) anytime.</p>
   </div>
 </div>
 
