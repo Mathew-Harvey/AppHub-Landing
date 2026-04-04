@@ -623,7 +623,6 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .footer-links { flex-wrap: wrap; gap: 16px }
 }
 </style>
-<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 </head>
 <body>
 
@@ -964,10 +963,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
         <li>No token limits</li>
         <li>Dedicated support channel</li>
       </ul>
-      <stripe-buy-button
-        buy-button-id="buy_btn_1TISrbI8o0Inzoyby45KJ5FV"
-        publishable-key="pk_live_51T3AIDI8o0InzoybxBQaLYYpPU2wyYR97vGEVd0rveU2q0qLWGV8RjpwNV3ufm29D20iRykcJcR5JrYj42rajERy00zZ9e7I5l"
-      ></stripe-buy-button>
+      <a href="https://api.my-app-hub.com/api/subscription/checkout-landing?plan=power" class="btn-primary">Get Started</a>
     </div>
   </div>
 </section>
