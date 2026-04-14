@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AppHub — Your team's tools, all in one place</title>
-<meta name="description" content="A branded portal where small teams upload, share, and use tools built with AI. Drag an HTML file, give it a name, your team uses it in 30 seconds.">
+<meta name="description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place.">
 <meta property="og:title" content="AppHub — Your team's tools, all in one place" />
-<meta property="og:description" content="A branded portal where small teams upload, share, and use tools built with AI. Drag an HTML file, give it a name, your team uses it in 30 seconds." />
+<meta property="og:description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://my-app-hub.com" />
 <meta property="og:image" content="https://my-app-hub.com/og-image.png" />
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="AppHub" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AppHub — Your team's tools, all in one place" />
-<meta name="twitter:description" content="A branded portal where small teams upload, share, and use tools built with AI. Drag an HTML file, give it a name, your team uses it in 30 seconds." />
+<meta name="twitter:description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
 <meta name="twitter:image" content="https://my-app-hub.com/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -584,6 +584,68 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
 .footer-copy { font-size: 13px; color: var(--muted) }
 .footer-origin { font-size: 13px; color: var(--muted); font-style: italic }
 
+/* === What's New Highlights === */
+.whats-new-section { text-align: center }
+.whats-new-section .section-sub { margin: 0 auto 48px }
+.whats-new-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px; margin-top: 48px;
+}
+.highlight-card {
+  position: relative;
+  padding: 36px 32px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s cubic-bezier(.16,1,.3,1), box-shadow .3s;
+}
+.highlight-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  opacity: 0; transition: opacity .3s;
+}
+.highlight-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.highlight-card:hover::before { opacity: 1 }
+.highlight-icon {
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-glow);
+  margin-bottom: 18px;
+}
+.highlight-icon svg {
+  width: 20px; height: 20px;
+  stroke: var(--accent); stroke-width: 2; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+.highlight-card h4 {
+  font-size: 18px; margin-bottom: 10px;
+  letter-spacing: -.02em;
+}
+.highlight-card p {
+  font-size: 15px; color: var(--muted);
+  line-height: 1.7;
+}
+.pricing-note {
+  margin-top: 28px; padding: 16px 24px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--accent-glow);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  font-size: 14px; color: var(--text-secondary);
+  line-height: 1.6;
+}
+.pricing-note strong { color: var(--accent) }
+
 /* === Responsive === */
 @media (max-width: 900px) {
   .hero h1 { font-size: clamp(32px, 5vw, 48px) }
@@ -592,6 +654,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .steps-grid { grid-template-columns: repeat(2, 1fr) }
   .steps-grid::after { display: none }
   .features-grid { grid-template-columns: repeat(2, 1fr) }
+  .whats-new-grid { grid-template-columns: repeat(2, 1fr) }
   .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 880px }
   .stats-bar { grid-template-columns: repeat(2, 1fr) }
   .stat-item:nth-child(2) { border-right: none }
@@ -614,6 +677,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .pricing-grid { grid-template-columns: 1fr; max-width: 440px }
   .steps-grid { grid-template-columns: 1fr; gap: 32px }
   .features-grid { grid-template-columns: 1fr }
+  .whats-new-grid { grid-template-columns: 1fr }
   .stats-bar { grid-template-columns: 1fr }
   .stat-item { border-right: none !important; border-bottom: 1px solid var(--border) }
   .stat-item:last-child { border-bottom: none }
@@ -633,6 +697,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   </a>
   <div class="nav-links">
     <a href="#product">Product</a>
+    <a href="#whats-new">What's New</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
@@ -655,6 +720,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
     <svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
   </button>
   <a href="#product" onclick="document.getElementById('mobileMenu').classList.remove('open')">Product</a>
+  <a href="#whats-new" onclick="document.getElementById('mobileMenu').classList.remove('open')">What's New</a>
   <a href="#how-it-works" onclick="document.getElementById('mobileMenu').classList.remove('open')">How It Works</a>
   <a href="#features" onclick="document.getElementById('mobileMenu').classList.remove('open')">Features</a>
   <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Pricing</a>
@@ -671,7 +737,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       Live Beta
     </div>
     <h1 class="reveal reveal-d1">Your team's tools,<br><span class="gradient-text">all in one place.</span></h1>
-    <p class="hero-sub reveal reveal-d2">A branded portal where anyone uploads the tools they build with AI — and everyone else uses them in seconds. No code, no IT, no&nbsp;waiting.</p>
+    <p class="hero-sub reveal reveal-d2">Build tools with any AI, share them in seconds, collaborate in real time. Plus a marketplace, prompt library, and version history — all in your team's branded&nbsp;toolbox.</p>
     <div class="hero-btns reveal reveal-d3">
       <a href="https://app.my-app-hub.com/register" class="btn-primary">Create free toolbox</a>
       <a href="#how-it-works" class="btn-secondary">See how it works</a>
@@ -704,12 +770,14 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="showcase-content">
     <p class="section-label reveal">Your Portal</p>
     <h2 class="section-heading reveal">A home for every tool your team builds</h2>
-    <p class="section-sub reveal">Your company's own applet store. Clean grid layout, search, activity feed — everything organized and instantly&nbsp;accessible.</p>
+    <p class="section-sub reveal">Your company's own applet store. Clean grid layout, collapsible sections, folders, search — everything organized and instantly&nbsp;accessible.</p>
     <ul class="showcase-features reveal">
       <li>Phone-style grid with icons and names</li>
-      <li>Search across all team tools instantly</li>
-      <li>Activity feed — see who built what</li>
+      <li>Sections &amp; folders to organize as you grow</li>
+      <li>Frequently-used apps float to the top automatically</li>
+      <li>TEAM / Personal / Solo badges at a glance</li>
       <li>Branded toolbox with your company identity</li>
+      <li>Search across all team tools instantly</li>
     </ul>
   </div>
   <div class="showcase-visual reveal">
@@ -738,12 +806,13 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="showcase-content">
     <p class="section-label reveal">Upload Flow</p>
     <h2 class="section-heading reveal">Drag, drop, done</h2>
-    <p class="section-sub reveal">Upload an HTML file or paste code directly. Pro users get automatic AI conversion for JSX, Vue, Python, and&nbsp;more.</p>
+    <p class="section-sub reveal">Upload an HTML file or paste code directly. AI converts JSX, TSX, Vue, Svelte, Python, JSON, Markdown, and ZIP archives&nbsp;automatically.</p>
     <ul class="showcase-features reveal">
       <li>Drag-and-drop any file onto the upload zone</li>
       <li>Paste code directly — no file needed</li>
-      <li>AI converts non-HTML files automatically</li>
-      <li>Prompt suggestions if you're not sure what to build</li>
+      <li>AI converts 10+ file types to runnable HTML</li>
+      <li>AI security scanner auto-fixes risky patterns</li>
+      <li>Improve-with-AI: describe a change, review the draft, deploy</li>
     </ul>
   </div>
 </div>
@@ -755,12 +824,14 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="showcase-content">
     <p class="section-label reveal">Applet Viewer</p>
     <h2 class="section-heading reveal">Your tools, running live</h2>
-    <p class="section-sub reveal">Every applet runs in a secure sandboxed viewer. Click an icon, the tool opens. Your team uses it instantly — zero&nbsp;installation.</p>
+    <p class="section-sub reveal">Every applet runs in a secure sandboxed viewer with real-time collaboration built&nbsp;in. Click an icon, the tool opens — and your whole team can use it&nbsp;together.</p>
     <ul class="showcase-features reveal">
+      <li>Live collaboration — see who's here, work together in real time</li>
+      <li>@-mention teammates with instant notifications</li>
+      <li>Version history — every edit tracked, roll back anytime</li>
       <li>Sandboxed iframe with strict security headers</li>
-      <li>Edit and update files in place</li>
+      <li>Sessions: archive shared state and start fresh</li>
       <li>Works on desktop, tablet, and mobile</li>
-      <li>No accounts or installs for end users</li>
     </ul>
   </div>
   <div class="showcase-visual reveal">
@@ -775,6 +846,43 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
     </div>
   </div>
 </div>
+
+<!-- What's New -->
+<section class="whats-new-section" id="whats-new">
+  <p class="section-label reveal">What's new</p>
+  <h2 class="section-heading reveal">AppHub just got a lot more&nbsp;powerful</h2>
+  <p class="section-sub reveal">Four major capabilities that turn a simple tool portal into a collaborative&nbsp;platform.</p>
+  <div class="whats-new-grid">
+    <div class="highlight-card reveal reveal-d1">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h4>Real-time Collaboration</h4>
+      <p>Work together in the same applet at the same time. Live data sync, presence indicators showing who's online, and @-mentions with instant notifications keep everyone in the&nbsp;loop.</p>
+    </div>
+    <div class="highlight-card reveal reveal-d2">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+      </div>
+      <h4>Prompt Library</h4>
+      <p>Browse ready-made prompts to build better applets — or create your own. Categories, search, one-click copy, and use tracking help your team share the best AI&nbsp;techniques.</p>
+    </div>
+    <div class="highlight-card reveal reveal-d3">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      </div>
+      <h4>Marketplace</h4>
+      <p>Discover public applets built by the community. Preview any listing, install a private copy into your toolbox in one click, or publish your own creations for others to&nbsp;use.</p>
+    </div>
+    <div class="highlight-card reveal reveal-d4">
+      <div class="highlight-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <h4>Version History &amp; Audit</h4>
+      <p>Every edit creates a new version with a full audit trail. Browse the lineage tree, see who changed what, and track how your applets evolve over&nbsp;time.</p>
+    </div>
+  </div>
+</section>
 
 <!-- Problem -->
 <div class="problem-section">
@@ -875,6 +983,27 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       </div>
       <p>Invite team members via email. Manage access, transfer admin. You decide who's&nbsp;in.</p>
     </div>
+    <div class="feature-card reveal reveal-d1">
+      <div class="feature-header">
+        <svg class="feature-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        <h4>Sections &amp; Folders</h4>
+      </div>
+      <p>Group applets into collapsible sections and folders. Keep your dashboard organized as your toolbox&nbsp;grows.</p>
+    </div>
+    <div class="feature-card reveal reveal-d2">
+      <div class="feature-header">
+        <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11l1.5 1.5L13 9"/><line x1="16" y1="8" x2="16" y2="14"/><line x1="13" y1="11" x2="19" y2="11"/></svg>
+        <h4>AI Security Scanner</h4>
+      </div>
+      <p>Every upload is automatically scanned for risky patterns and auto-fixed before it reaches your&nbsp;team.</p>
+    </div>
+    <div class="feature-card reveal reveal-d3">
+      <div class="feature-header">
+        <svg class="feature-icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><rect x="6" y="3" width="12" height="18" rx="2" opacity=".4"/><path d="M8 17h8"/><path d="M10 13h4"/></svg>
+        <h4>Multi-Workspace</h4>
+      </div>
+      <p>One account, multiple toolboxes. Switch between your work team and personal tools in a single&nbsp;click.</p>
+    </div>
   </div>
 </section>
 
@@ -962,6 +1091,9 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       </ul>
       <a href="https://api.my-app-hub.com/api/subscription/checkout-landing?plan=power" class="btn-primary">Get Started</a>
     </div>
+  </div>
+  <div class="pricing-note reveal">
+    <strong>Included in every plan:</strong> Prompt library, marketplace, version history, real-time collaboration, and dark&nbsp;mode.
   </div>
 </section>
 
