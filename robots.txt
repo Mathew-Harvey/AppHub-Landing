@@ -1,0 +1,66 @@
+# robots.txt for my-app-hub.com
+# Specification: RFC 9309 (https://www.rfc-editor.org/rfc/rfc9309)
+
+# Default policy: allow all well-behaved crawlers.
+User-agent: *
+Allow: /
+
+# Content usage preferences (Content Signals)
+# https://contentsignals.org/
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+# --- AI crawlers ---
+# Allow visibility in AI search/answer products; disallow training use.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-ExternalFetcher
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: https://my-app-hub.com/sitemap.xml
