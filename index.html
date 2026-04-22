@@ -725,58 +725,24 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
 .webintel-visual:hover .webintel-card { transform: rotate(0deg) translateY(-4px) }
 .webintel-card-img {
   aspect-ratio: 1200 / 630;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
   position: relative;
   overflow: hidden;
-}
-.webintel-card-img-mock {
-  position: absolute;
-  inset: 18px;
-  background: var(--surface);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0,0,0,.12);
-  padding: 14px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.webintel-card-dots { display: flex; gap: 5px }
-.webintel-card-dots span {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: var(--border-strong);
-}
-.webintel-card-dots span:first-child { background: #ff5f57 }
-.webintel-card-dots span:nth-child(2) { background: #febc2e }
-.webintel-card-dots span:nth-child(3) { background: #28c840 }
-.webintel-card-mock-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: relative;
-}
-.webintel-card-mock-bar {
-  height: 8px;
   background: var(--surface-alt);
-  border-radius: 4px;
 }
-.webintel-card-mock-tile {
-  position: absolute;
-  bottom: 4px;
-  right: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-light), var(--accent));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 4px 12px rgba(233,69,96,.3);
+.webintel-card-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
 }
-.webintel-card-mock-tile::after {
-  content: '🧰';
-  filter: brightness(1.4);
+.webintel-visual-caption {
+  margin: 16px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  font-style: italic;
+  text-align: center;
+  line-height: 1.5;
 }
 .webintel-card-meta {
   padding: 16px 18px 18px;
@@ -1225,29 +1191,30 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
         <a href="https://webintel.dev/#docs" target="_blank" rel="noopener" class="btn-secondary">Read the docs</a>
       </div>
     </div>
-    <div class="webintel-visual reveal reveal-d2" aria-hidden="true">
+    <div class="webintel-visual reveal reveal-d2">
       <div class="webintel-card">
         <div class="webintel-card-img">
-          <div class="webintel-card-img-mock">
-            <div class="webintel-card-dots"><span></span><span></span><span></span></div>
-            <div class="webintel-card-mock-body">
-              <div class="webintel-card-mock-bar" style="width:40%"></div>
-              <div class="webintel-card-mock-bar" style="width:72%"></div>
-              <div class="webintel-card-mock-bar" style="width:55%"></div>
-              <div class="webintel-card-mock-tile"></div>
-            </div>
-          </div>
+          <img
+            src="assets/webintel-preview.png"
+            alt="Live WebIntel screenshot of the AppHub homepage"
+            loading="lazy"
+            width="1200"
+            height="630"
+          />
         </div>
         <div class="webintel-card-meta">
           <div class="webintel-card-domain">my-app-hub.com</div>
-          <div class="webintel-card-title">Quote Calculator — AppHub</div>
-          <div class="webintel-card-desc">Fast quotes for custom jobs — enter hours, materials, margin; get a shareable PDF.</div>
+          <div class="webintel-card-title">AppHub — Your team's tools, all in one place</div>
+          <div class="webintel-card-desc">Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history.</div>
         </div>
       </div>
       <div class="webintel-card-badge">
         <svg viewBox="0 0 24 24" width="14" height="14"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
         <span>Previews by WebIntel</span>
       </div>
+      <p class="webintel-visual-caption">
+        ↑ That&rsquo;s a live WebIntel screenshot of this very page. No config, no upload.
+      </p>
     </div>
   </div>
 </section>
