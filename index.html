@@ -646,6 +646,198 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
 }
 .pricing-note strong { color: var(--accent) }
 
+/* === WebIntel partner section === */
+.webintel-section {
+  padding: 96px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.webintel-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 64px;
+  align-items: center;
+}
+.webintel-text .section-label { color: var(--accent) }
+.webintel-text .section-heading { text-align: left; max-width: none }
+.webintel-text .section-sub { text-align: left; margin: 0 0 18px; max-width: 560px }
+.webintel-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid var(--accent-glow);
+  transition: border-color .2s;
+}
+.webintel-link:hover { border-bottom-color: var(--accent) }
+.webintel-bullets {
+  list-style: none;
+  margin: 20px 0 28px;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.webintel-bullets li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.webintel-bullets li span {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.webintel-bullets code {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.webintel-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+/* Right column: a mock social share card showing what WebIntel delivers */
+.webintel-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.webintel-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transform: rotate(-1.2deg);
+  transition: transform .4s cubic-bezier(.16,1,.3,1);
+}
+.webintel-visual:hover .webintel-card { transform: rotate(0deg) translateY(-4px) }
+.webintel-card-img {
+  aspect-ratio: 1200 / 630;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.webintel-card-img-mock {
+  position: absolute;
+  inset: 18px;
+  background: var(--surface);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.12);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.webintel-card-dots { display: flex; gap: 5px }
+.webintel-card-dots span {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border-strong);
+}
+.webintel-card-dots span:first-child { background: #ff5f57 }
+.webintel-card-dots span:nth-child(2) { background: #febc2e }
+.webintel-card-dots span:nth-child(3) { background: #28c840 }
+.webintel-card-mock-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+.webintel-card-mock-bar {
+  height: 8px;
+  background: var(--surface-alt);
+  border-radius: 4px;
+}
+.webintel-card-mock-tile {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 4px 12px rgba(233,69,96,.3);
+}
+.webintel-card-mock-tile::after {
+  content: '🧰';
+  filter: brightness(1.4);
+}
+.webintel-card-meta {
+  padding: 16px 18px 18px;
+  border-top: 1px solid var(--border);
+}
+.webintel-card-domain {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.webintel-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -.01em;
+}
+.webintel-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.webintel-card-badge {
+  position: absolute;
+  top: -14px;
+  right: -8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  box-shadow: var(--shadow-md);
+  transform: rotate(4deg);
+}
+.webintel-card-badge svg {
+  stroke: #fff; stroke-width: 2; fill: none;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Footer "Powered by" line */
+.footer-powered {
+  font-size: 13px;
+  color: var(--muted);
+}
+.footer-powered a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border-strong);
+  transition: color .2s, border-color .2s;
+}
+.footer-powered a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 /* === Responsive === */
 @media (max-width: 900px) {
   .hero h1 { font-size: clamp(32px, 5vw, 48px) }
@@ -660,6 +852,12 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .stat-item:nth-child(2) { border-right: none }
   .stat-item:nth-child(1),
   .stat-item:nth-child(2) { border-bottom: 1px solid var(--border) }
+  .webintel-inner { grid-template-columns: 1fr; gap: 48px }
+  .webintel-visual { order: -1 }
+  .webintel-text .section-heading,
+  .webintel-text .section-sub { text-align: center }
+  .webintel-text .section-sub { margin-left: auto; margin-right: auto }
+  .webintel-cta { justify-content: center }
   .footer-top { flex-direction: column; gap: 24px }
   .footer-bottom { flex-direction: column; gap: 8px; text-align: center }
 }
@@ -700,6 +898,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
     <a href="#whats-new">What's New</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#features">Features</a>
+    <a href="#webintel">WebIntel</a>
     <a href="#pricing">Pricing</a>
   </div>
   <div class="nav-actions">
@@ -1007,6 +1206,52 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   </div>
 </section>
 
+<!-- WebIntel partner section -->
+<section class="webintel-section" id="webintel">
+  <div class="webintel-inner">
+    <div class="webintel-text">
+      <p class="section-label reveal">Powered by WebIntel</p>
+      <h2 class="section-heading reveal">Rich previews, built&nbsp;in</h2>
+      <p class="section-sub reveal">Every published applet gets a live screenshot — used for social share cards on LinkedIn, Slack and Twitter, the hero image on its public page, and the dimmed background of its toolbox tile. No upload, no config, it just&nbsp;appears.</p>
+      <p class="section-sub reveal" style="margin-top:-8px">We use <a href="https://webintel.dev" target="_blank" rel="noopener" class="webintel-link">WebIntel</a> — a screenshot and link-preview API built for developers and AI agents. Same API you can drop into your own&nbsp;product.</p>
+      <ul class="webintel-bullets reveal">
+        <li><span>📸</span> Screenshots and Open Graph metadata from any URL</li>
+        <li><span>🤖</span> MCP server — Claude calls it as a native tool</li>
+        <li><span>⚡</span> REST API, single <code>x-api-key</code> header</li>
+        <li><span>💸</span> Free tier — 100 requests/day, no credit card</li>
+      </ul>
+      <div class="webintel-cta reveal">
+        <a href="https://webintel.dev" target="_blank" rel="noopener" class="btn-primary">Try WebIntel</a>
+        <a href="https://webintel.dev/#docs" target="_blank" rel="noopener" class="btn-secondary">Read the docs</a>
+      </div>
+    </div>
+    <div class="webintel-visual reveal reveal-d2" aria-hidden="true">
+      <div class="webintel-card">
+        <div class="webintel-card-img">
+          <div class="webintel-card-img-mock">
+            <div class="webintel-card-dots"><span></span><span></span><span></span></div>
+            <div class="webintel-card-mock-body">
+              <div class="webintel-card-mock-bar" style="width:40%"></div>
+              <div class="webintel-card-mock-bar" style="width:72%"></div>
+              <div class="webintel-card-mock-bar" style="width:55%"></div>
+              <div class="webintel-card-mock-tile"></div>
+            </div>
+          </div>
+        </div>
+        <div class="webintel-card-meta">
+          <div class="webintel-card-domain">my-app-hub.com</div>
+          <div class="webintel-card-title">Quote Calculator — AppHub</div>
+          <div class="webintel-card-desc">Fast quotes for custom jobs — enter hours, materials, margin; get a shareable PDF.</div>
+        </div>
+      </div>
+      <div class="webintel-card-badge">
+        <svg viewBox="0 0 24 24" width="14" height="14"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        <span>Previews by WebIntel</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Culture -->
 <div class="culture-section">
   <div class="culture-inner">
@@ -1129,6 +1374,10 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 AppHub</p>
+    <p class="footer-powered">
+      Previews by
+      <a href="https://webintel.dev" target="_blank" rel="noopener">WebIntel</a>
+    </p>
     <p class="footer-origin">Built in Western Australia</p>
   </div>
 </footer>
