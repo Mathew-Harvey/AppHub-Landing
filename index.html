@@ -305,6 +305,18 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
   margin: 0 auto 40px;
 }
 .hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap }
+/* Trust strip under the hero CTAs — concrete numbers do more work than abstract
+   "free" claims. Three checkmark items: applet count, toolbox count, time to
+   first tool. Kept compact and quiet so it doesn't compete with the buttons. */
+.hero-trust {
+  margin: 22px auto 0;
+  font-size: 13.5px; color: var(--muted); font-weight: 500;
+  display: inline-flex; flex-wrap: wrap; gap: 6px 10px;
+  justify-content: center; align-items: center;
+  max-width: 560px;
+}
+.hero-trust-dot { color: var(--accent); font-weight: 700; margin-right: 2px }
+.hero-trust-sep { opacity: .45 }
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-light));
   color: #fff; padding: 14px 36px; border-radius: var(--radius-sm);
@@ -507,8 +519,8 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
 .pricing-section { text-align: center }
 .pricing-section .section-sub { margin: 0 auto 40px }
 .pricing-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 24px; max-width: 1400px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 24px; max-width: 880px; margin: 0 auto;
 }
 .pricing-card {
   position: relative;
@@ -577,6 +589,28 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
 .cta-inner { max-width: 1200px; margin: 0 auto; padding: 120px 40px }
 .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px }
 .cta-note { font-size: 14px; color: var(--muted); margin-top: 20px }
+/* Larger, more confident primary action at the bottom — this is the last
+   chance to convert someone who scrolled all the way down, so the button
+   gets extra padding and a slightly heavier weight. */
+.cta-primary-large {
+  padding: 18px 44px;
+  font-size: 16px;
+  font-weight: 700;
+}
+/* Demoted log-in link — plain text, no border, low contrast so it doesn't
+   compete with the primary CTA but is still discoverable for returning
+   users. */
+.cta-login-link {
+  color: var(--muted); font-size: 14px; font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px dashed transparent;
+  transition: color .2s, border-color .2s;
+}
+.cta-login-link:hover {
+  color: var(--text);
+  border-bottom-color: var(--border-strong);
+  text-decoration: none;
+}
 
 /* === Footer === */
 footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
@@ -662,6 +696,16 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   line-height: 1.6;
 }
 .pricing-note strong { color: var(--accent) }
+/* Reassurance line between the cards and the "included in both" callout —
+   directly addresses the "is this a sneaky trial?" fear that kills SaaS
+   signups. Quiet typography because the message is the point, not the
+   visual. */
+.pricing-fineprint {
+  margin-top: 32px;
+  font-size: 14px; color: var(--muted);
+  max-width: 540px; margin-left: auto; margin-right: auto;
+  line-height: 1.7;
+}
 
 /* === WebIntel partner section === */
 .webintel-section {
@@ -848,7 +892,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .steps-grid::after { display: none }
   .features-grid { grid-template-columns: repeat(2, 1fr) }
   .whats-new-grid { grid-template-columns: repeat(2, 1fr) }
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 880px }
+  .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 720px }
   .stats-bar { grid-template-columns: repeat(2, 1fr) }
   .stat-item:nth-child(2) { border-right: none }
   .stat-item:nth-child(1),
@@ -874,6 +918,11 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .hero { padding: 130px 20px 72px }
   .hero h1 { font-size: 28px }
   .hero-sub { font-size: 16px }
+  /* Hero trust strip stays readable on narrow screens — drop a level of
+     contrast on the separators so the 3 items don't visually clump. */
+  .hero-trust { font-size: 12.5px; gap: 4px 8px }
+  .hero-trust-sep { display: none }
+  .cta-primary-large { padding: 16px 32px; font-size: 15px }
   .showcase { padding: 80px 20px }
   .webintel-section { padding: 72px 20px }
   .webintel-inner { gap: 40px }
@@ -944,19 +993,31 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <section class="hero">
     <div class="beta-badge reveal">
       <span class="beta-dot"></span>
-      Live Beta
+      Free forever &middot; No credit card
     </div>
     <h1 class="reveal reveal-d1">Your team's tools,<br><span class="gradient-text">all in one place.</span></h1>
-    <p class="hero-sub reveal reveal-d2">Build tools with any AI, share them in seconds, collaborate in real time. Plus a marketplace, prompt library, and version history — all in your team's branded&nbsp;toolbox.</p>
+    <p class="hero-sub reveal reveal-d2">Build tools with any AI. Share them in seconds. Run them as a team &mdash; in your own branded&nbsp;toolbox.</p>
     <div class="hero-btns reveal reveal-d3">
-      <a href="https://app.my-app-hub.com/register" class="btn-primary">Create free toolbox</a>
+      <a href="https://app.my-app-hub.com/register" class="btn-primary">Start your free toolbox</a>
       <a href="#how-it-works" class="btn-secondary">See how it works</a>
     </div>
+    <p class="hero-trust reveal reveal-d3">
+      <span class="hero-trust-dot">&#10003;</span> 5 free applets
+      <span class="hero-trust-sep">&middot;</span>
+      <span class="hero-trust-dot">&#10003;</span> 2 toolboxes
+      <span class="hero-trust-sep">&middot;</span>
+      <span class="hero-trust-dot">&#10003;</span> Ready in 30 seconds
+    </p>
   </section>
 </div>
 
-<!-- Stats -->
+<!-- Stats — concrete friction-killer numbers, ordered by signup objection
+     priority: price > effort > skill > capacity. -->
 <div class="stats-bar">
+  <div class="stat-item">
+    <div class="stat-value">$0</div>
+    <div class="stat-label">to start &middot; no credit card</div>
+  </div>
   <div class="stat-item">
     <div class="stat-value">30s</div>
     <div class="stat-label">to share a tool</div>
@@ -964,10 +1025,6 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="stat-item">
     <div class="stat-value">0</div>
     <div class="stat-label">code required</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-value">0</div>
-    <div class="stat-label">IT tickets</div>
   </div>
   <div class="stat-item">
     <div class="stat-value">&infin;</div>
@@ -1284,87 +1341,58 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
 <!-- Pricing -->
 <section class="pricing-section" id="pricing">
   <p class="section-label reveal">Pricing</p>
-  <h2 class="section-heading reveal">Start free. Upgrade when you need&nbsp;more.</h2>
-  <p class="section-sub reveal">No credit card required. No surprise&nbsp;invoices.</p>
+  <h2 class="section-heading reveal">Two plans. No credit card to start.</h2>
+  <p class="section-sub reveal">Free is free, forever &mdash; not a trial. Upgrade to Plus only when you want the AI&nbsp;features.</p>
   <div class="pricing-grid">
     <div class="pricing-card reveal">
       <div class="plan-name">Free</div>
-      <div class="price">$0</div>
-      <div class="price-sub">Get started with the basics.</div>
+      <div class="price">$0<span style="font-size: 14px; font-weight: 500; color: var(--muted)"> forever</span></div>
+      <div class="price-sub">Everything a small team needs to get&nbsp;started.</div>
       <ul class="pricing-features">
-        <li>Up to 5 hosted applets</li>
-        <li>Up to 3 team members</li>
-        <li>Drag-and-drop HTML uploads</li>
-        <li>Password-protected portal</li>
-        <li class="disabled">Custom branding</li>
-        <li class="disabled">AI conversions</li>
-        <li class="disabled">AI applet building</li>
-        <li class="disabled">Priority support</li>
+        <li><strong>5 applets</strong> hosted in your toolbox</li>
+        <li><strong>2 toolboxes</strong> &mdash; one work, one personal</li>
+        <li><strong>Unlimited team members</strong></li>
+        <li>Your team's branded portal</li>
+        <li>Real-time collaboration</li>
+        <li>Prompt library + marketplace</li>
+        <li class="disabled">AI features (Plus only)</li>
       </ul>
-      <a href="https://app.my-app-hub.com/register" class="btn-secondary">Start free</a>
+      <a href="https://app.my-app-hub.com/register" class="btn-secondary">Start free &mdash; no card</a>
     </div>
     <div class="pricing-card featured reveal">
-      <div class="plan-name">Team <span class="pricing-badge">Popular</span></div>
+      <div class="plan-name">Plus <span class="pricing-badge">All AI</span></div>
       <div class="price">$12 <span>/ month</span></div>
-      <div class="price-sub">For teams building with AI every&nbsp;day.</div>
+      <div class="price-sub">Unlock AI &mdash; cancel anytime, no contracts.</div>
       <ul class="pricing-features">
-        <li>Up to 50 hosted applets</li>
-        <li>Up to 15 team members</li>
-        <li>20 AI conversions / month</li>
-        <li>Custom branding</li>
-        <li>Drag-and-drop HTML uploads</li>
-        <li>Password-protected portal</li>
-        <li>Smart AI uploads</li>
-        <li class="disabled">AI applet building</li>
-      </ul>
-      <a href="https://api.my-app-hub.com/api/subscription/checkout-landing?plan=team" class="btn-primary">Get Started</a>
-    </div>
-    <div class="pricing-card reveal">
-      <div class="plan-name">Creator</div>
-      <div class="price">$29 <span>/ month</span></div>
-      <div class="price-sub">Build applets with AI — at&nbsp;scale.</div>
-      <ul class="pricing-features">
-        <li>Unlimited hosted applets</li>
-        <li>Unlimited team members</li>
-        <li>100 AI conversions / month</li>
-        <li>AI applet building (500K tokens / mo)</li>
-        <li>Custom branding</li>
+        <li><strong>Unlimited applets &amp; toolboxes</strong></li>
+        <li>AI-powered file conversions</li>
+        <li>AI Applet Builder &mdash; describe a tool, get one</li>
+        <li>Generous monthly AI token budget</li>
+        <li>Custom branding (your logo &amp; colours)</li>
         <li>Priority support</li>
-        <li>Drag-and-drop HTML uploads</li>
-        <li>Password-protected portal</li>
+        <li>Everything in Free, of course</li>
       </ul>
-      <a href="https://api.my-app-hub.com/api/subscription/checkout-landing?plan=creator" class="btn-primary">Get Started</a>
-    </div>
-    <div class="pricing-card reveal">
-      <div class="plan-name">Pro</div>
-      <div class="price">$79 <span>/ month</span></div>
-      <div class="price-sub">Build without limits.</div>
-      <ul class="pricing-features">
-        <li>Everything in Creator</li>
-        <li>Unlimited AI applet building</li>
-        <li>Unlimited iterations</li>
-        <li>No token limits</li>
-        <li>Dedicated support channel</li>
-      </ul>
-      <a href="https://api.my-app-hub.com/api/subscription/checkout-landing?plan=power" class="btn-primary">Get Started</a>
+      <a href="https://api.my-app-hub.com/api/subscription/checkout-landing" class="btn-primary">Upgrade to Plus</a>
     </div>
   </div>
+  <p class="pricing-fineprint reveal">No trial countdown, no auto-charge. Stay on Free as long as you like &mdash; upgrade only when AI becomes useful to you.</p>
   <div class="pricing-note reveal">
-    <strong>Included in every plan:</strong> Prompt library, marketplace, version history, real-time collaboration, and dark&nbsp;mode.
+    <strong>Included in both plans:</strong> Prompt library, marketplace, version history, real-time collaboration, and dark&nbsp;mode.
   </div>
 </section>
 
-<!-- CTA -->
+<!-- CTA — single dominant primary action, log-in demoted to a text link.
+     Numbers in the section-sub do the friction work without leaning on the
+     word "free" again (already said three times above the fold). -->
 <div class="cta-section" id="get-started">
   <div class="cta-inner">
     <p class="section-label reveal">Get started</p>
     <h2 class="section-heading reveal">Give your team a place to&nbsp;build</h2>
-    <p class="section-sub reveal" style="margin:0 auto">Free toolbox — up to 5&nbsp;applets, up to 3&nbsp;team members. No credit card&nbsp;required.</p>
-    <div class="cta-btns reveal">
-      <a href="https://app.my-app-hub.com/register" class="btn-primary">Create free toolbox</a>
-      <a href="https://app.my-app-hub.com/login" class="btn-secondary">Log in</a>
+    <p class="section-sub reveal" style="margin:0 auto">5 applets, 2 toolboxes, unlimited team members. Set up in 30&nbsp;seconds. No credit card, no&nbsp;trial.</p>
+    <div class="cta-btns reveal" style="flex-direction: column; align-items: center; gap: 16px">
+      <a href="https://app.my-app-hub.com/register" class="btn-primary cta-primary-large">Start your free toolbox</a>
+      <a href="https://app.my-app-hub.com/login" class="cta-login-link">Already have an account? Log in</a>
     </div>
-    <p class="cta-note reveal">Free forever on the Free plan. Upgrade to Team ($12/mo), Creator ($29/mo), or Pro ($79/mo) anytime.</p>
   </div>
 </div>
 
