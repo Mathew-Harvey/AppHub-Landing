@@ -42,6 +42,7 @@
     var href = link.getAttribute('href') || '';
 
     if (href.indexOf('/register') !== -1) return 'register';
+    if (href.indexOf('/try') !== -1) return 'try_toolbox';
     if (href.indexOf('/login') !== -1) return 'login';
     if (href.indexOf('/checkout-landing') !== -1) return 'checkout';
     if (href.indexOf('webintel.dev') !== -1) return 'webintel';
