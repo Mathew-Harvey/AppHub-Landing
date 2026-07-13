@@ -1504,5 +1504,22 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<!-- Netlify Identity — the CMS invite / password-recovery emails link to the
+     site root with a token in the URL hash. This widget catches that token and
+     bounces the editor into /admin/ to finish setting up. Harmless (does
+     nothing) for normal visitors. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', function (user) {
+      if (!user) {
+        window.netlifyIdentity.on('login', function () {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
