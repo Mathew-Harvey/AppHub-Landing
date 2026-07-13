@@ -1,0 +1,24 @@
+# Netlify build configuration for AppHub Landing + Blog
+#
+# The site is a hand-authored static index.html plus a tiny build step that
+# turns the Markdown files under content/blog/ (written by editors through the
+# Decap CMS admin panel) into pre-rendered static blog pages under /blog/.
+#
+# On every push — including the commits Decap makes when someone publishes a
+# post — Netlify runs `npm run build`, regenerates the blog, and deploys.
+
+[build]
+  command = "npm run build"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Pretty URLs: serve /blog/<slug>/ from the generated index.html files.
+# (Netlify does this automatically for folder/index.html, listed here for clarity.)
+
+# Long-cache the immutable uploaded blog images.
+[[headers]]
+  for = "/assets/blog/uploads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

@@ -1,0 +1,75 @@
+# Decap CMS (formerly Netlify CMS) configuration
+# Docs: https://decapcms.org/docs/configuration-options/
+#
+# Auth: Netlify Identity + Git Gateway. Invited editors log in with an
+# email + password at /admin/ — they never need a GitHub account. When they
+# publish, Decap commits a Markdown file to the repo through Git Gateway and
+# Netlify redeploys.
+
+backend:
+  name: git-gateway
+  branch: main # the branch Decap reads from and commits to
+
+# Editorial workflow = drafts become Pull Requests instead of going straight
+# live, so posts can be reviewed before publishing. Remove this line to have
+# "Publish" commit directly to main.
+publish_mode: editorial_workflow
+
+# Where uploaded images are stored in the repo, and the URL they resolve to
+# on the live site.
+media_folder: "assets/blog/uploads"
+public_folder: "/assets/blog/uploads"
+
+# Nicer commit messages in the repo history.
+site_url: https://my-app-hub.com
+display_url: https://my-app-hub.com
+logo_url: https://my-app-hub.com/apphubLogo.png
+
+collections:
+  - name: "blog"
+    label: "Blog posts"
+    label_singular: "Blog post"
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}" # filename = slugified title, also the URL: /blog/<slug>/
+    summary: "{{title}} — {{date | date('MMM D, YYYY')}}"
+    sortable_fields: ["date", "title"]
+    view_filters:
+      - label: "Drafts"
+        field: draft
+        pattern: true
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Publish date"
+        name: "date"
+        widget: "datetime"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+      - { label: "Author", name: "author", widget: "string", default: "AppHub Team" }
+      - label: "Excerpt"
+        name: "excerpt"
+        widget: "text"
+        hint: "1–2 sentence summary shown on cards and used as the meta description / social preview."
+      - label: "Cover image"
+        name: "thumbnail"
+        widget: "image"
+        required: false
+        hint: "Shown at the top of the article and on the blog card. ~1200×630 looks best."
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        required: false
+        default: []
+        hint: "Press enter after each tag."
+      - label: "Draft"
+        name: "draft"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Keep ON while writing. Turn OFF to make it eligible to go live."
+      - label: "Body"
+        name: "body"
+        widget: "markdown"

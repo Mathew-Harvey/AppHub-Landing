@@ -5,4 +5,27 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>https://my-app-hub.com/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://my-app-hub.com/blog/welcome-to-the-apphub-blog/</loc>
+    <lastmod>2026-07-10T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-app-hub.com/blog/from-laptop-to-team-in-30-seconds/</loc>
+    <lastmod>2026-07-08T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://my-app-hub.com/blog/collaboration-prompt-library-marketplace/</loc>
+    <lastmod>2026-07-05T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

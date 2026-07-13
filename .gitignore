@@ -1,0 +1,14 @@
+# Node
+node_modules/
+
+# Build output — the blog HTML is generated from content/blog/*.md at deploy
+# time by scripts/build-blog.js. The Markdown source is the source of truth;
+# the rendered pages are never committed. (Keep the folder + .gitkeep so the
+# path exists in git.)
+/blog/*
+!/blog/.gitkeep
+
+# OS / editor cruft
+.DS_Store
+*.log
+.netlify/
