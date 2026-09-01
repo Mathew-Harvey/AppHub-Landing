@@ -20,7 +20,7 @@ Claude, ChatGPT, Lovable — whatever you like. Ask it for a tool and you'll get
 
 ## Step 2 — Drag it onto AppHub
 
-Open your team's dashboard and drag the file onto the upload zone. Give it a name and pick an icon. If it isn't plain HTML — JSX, a Vue component, a zip, raw model output — AppHub converts it automatically.
+Open your team's dashboard and drag the file onto the upload zone. Give it a name and pick an icon. Ask your AI for a single HTML file and you can drop it straight in, no build step and nothing to convert.
 
 ## Step 3 — It appears in the grid
 
