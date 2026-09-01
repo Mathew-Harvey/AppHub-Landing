@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AppHub — Your team's tools, all in one place</title>
-<meta name="description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place.">
+<meta name="description" content="Build tools with any AI, then share and run them as a team. Real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place.">
 <meta property="og:title" content="AppHub — Your team's tools, all in one place" />
-<meta property="og:description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
+<meta property="og:description" content="Build tools with any AI, then share and run them as a team. Real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://my-app-hub.com" />
 <meta property="og:image" content="https://my-app-hub.com/og-image.png" />
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="AppHub" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AppHub — Your team's tools, all in one place" />
-<meta name="twitter:description" content="Build, share, and collaborate on AI-powered tools with real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
+<meta name="twitter:description" content="Build tools with any AI, then share and run them as a team. Real-time sync, a prompt library, marketplace, and version history. Your team's toolbox, all in one place." />
 <meta name="twitter:image" content="https://my-app-hub.com/og-image.png" />
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -571,8 +571,8 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
 .pricing-section { text-align: center }
 .pricing-section .section-sub { margin: 0 auto 40px }
 .pricing-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 24px; max-width: 880px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px; max-width: 1120px; margin: 0 auto;
 }
 .pricing-card {
   position: relative;
@@ -602,14 +602,6 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
   color: var(--muted); margin-bottom: 14px;
 }
 .pricing-card.featured .plan-name { color: var(--accent) }
-.pricing-badge {
-  display: inline-block; padding: 3px 10px;
-  border-radius: 100px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-light));
-  color: #fff; font-size: 10px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .06em;
-  margin-left: 8px; vertical-align: middle;
-}
 .pricing-card .price {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 40px; font-weight: 700;
@@ -626,8 +618,6 @@ section { padding: 120px 40px; max-width: 1200px; margin: 0 auto }
   content: '\2713'; position: absolute; left: 0;
   color: var(--accent); font-weight: 700; font-size: 13px;
 }
-.pricing-features li.disabled { color: var(--muted); opacity: .5 }
-.pricing-features li.disabled::before { content: '\2014'; color: var(--muted) }
 .pricing-card .btn-primary,
 .pricing-card .btn-secondary { width: 100%; text-align: center }
 
@@ -944,7 +934,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   .steps-grid::after { display: none }
   .features-grid { grid-template-columns: repeat(2, 1fr) }
   .whats-new-grid { grid-template-columns: repeat(2, 1fr) }
-  .pricing-grid { grid-template-columns: repeat(2, 1fr); max-width: 720px }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 440px }
   .stats-bar { grid-template-columns: repeat(2, 1fr) }
   .stat-item:nth-child(2) { border-right: none }
   .stat-item:nth-child(1),
@@ -1056,11 +1046,11 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       <a href="#how-it-works" class="btn-secondary">See how it works</a>
     </div>
     <p class="hero-trust reveal reveal-d3">
+      <span class="hero-trust-dot">&#10003;</span> 3 team members
+      <span class="hero-trust-sep">&middot;</span>
       <span class="hero-trust-dot">&#10003;</span> 5 free applets
       <span class="hero-trust-sep">&middot;</span>
       <span class="hero-trust-dot">&#10003;</span> 2 toolboxes
-      <span class="hero-trust-sep">&middot;</span>
-      <span class="hero-trust-dot">&#10003;</span> Ready in 30 seconds
     </p>
   </section>
 </div>
@@ -1069,7 +1059,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
      priority: price > effort > skill > capacity. -->
 <div class="stats-bar">
   <div class="stat-item">
-    <div class="stat-value">$0</div>
+    <div class="stat-value">A$0</div>
     <div class="stat-label">to start &middot; no credit card</div>
   </div>
   <div class="stat-item">
@@ -1127,13 +1117,13 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="showcase-content">
     <p class="section-label reveal">Upload Flow</p>
     <h2 class="section-heading reveal">Drag, drop, done</h2>
-    <p class="section-sub reveal">Upload an HTML file or paste code directly. AI converts JSX, TSX, Vue, Svelte, Python, JSON, Markdown, and ZIP archives&nbsp;automatically.</p>
+    <p class="section-sub reveal">Upload an HTML file or paste the HTML directly. Build the tool in whatever AI you already use, then drop it&nbsp;in.</p>
     <ul class="showcase-features reveal">
-      <li>Drag-and-drop any file onto the upload zone</li>
-      <li>Paste code directly — no file needed</li>
-      <li>AI converts 10+ file types to runnable HTML</li>
-      <li>AI security scanner auto-fixes risky patterns</li>
-      <li>Improve-with-AI: describe a change, review the draft, deploy</li>
+      <li>Drag and drop an HTML file onto the upload zone</li>
+      <li>Paste HTML directly, no file needed</li>
+      <li>Every upload is checked for risky patterns before your team sees it</li>
+      <li>In your team's toolbox the moment it uploads</li>
+      <li>Version history keeps every earlier upload</li>
     </ul>
   </div>
 </div>
@@ -1290,13 +1280,6 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
       </div>
       <p>Applets arranged in a familiar grid with icons. Everyone already knows how to use&nbsp;it.</p>
     </div>
-    <div class="feature-card reveal reveal-d2">
-      <div class="feature-header">
-        <svg class="feature-icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-        <h4>Smart AI Uploads</h4>
-      </div>
-      <p>Drop an HTML file and it works. Drop JSX, a zip, or raw LLM output? Pro converts it&nbsp;automatically.</p>
-    </div>
     <div class="feature-card reveal reveal-d3">
       <div class="feature-header">
         <svg class="feature-icon" viewBox="0 0 24 24"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
@@ -1314,9 +1297,9 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
     <div class="feature-card reveal reveal-d2">
       <div class="feature-header">
         <svg class="feature-icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M8 11l1.5 1.5L13 9"/><line x1="16" y1="8" x2="16" y2="14"/><line x1="13" y1="11" x2="19" y2="11"/></svg>
-        <h4>AI Security Scanner</h4>
+        <h4>Security Scanning</h4>
       </div>
-      <p>Every upload is automatically scanned for risky patterns and auto-fixed before it reaches your&nbsp;team.</p>
+      <p>Every upload is scanned for risky patterns and held back until it passes, before it reaches your&nbsp;team.</p>
     </div>
     <div class="feature-card reveal reveal-d3">
       <div class="feature-header">
@@ -1395,43 +1378,53 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
 <!-- Pricing -->
 <section class="pricing-section" id="pricing">
   <p class="section-label reveal">Pricing</p>
-  <h2 class="section-heading reveal">Two plans. No credit card to start.</h2>
-  <p class="section-sub reveal">Free is free, forever &mdash; not a trial. Upgrade to Plus only when you want the AI&nbsp;features.</p>
+  <h2 class="section-heading reveal">Three ways to run AppHub. No credit card to start.</h2>
+  <p class="section-sub reveal">Free is free, forever, not a trial. Move up when you outgrow the free&nbsp;limits.</p>
   <div class="pricing-grid">
     <div class="pricing-card reveal">
       <div class="plan-name">Free</div>
-      <div class="price">$0<span style="font-size: 14px; font-weight: 500; color: var(--muted)"> forever</span></div>
+      <div class="price">A$0<span style="font-size: 14px; font-weight: 500; color: var(--muted)"> forever</span></div>
       <div class="price-sub">Everything a small team needs to get&nbsp;started.</div>
       <ul class="pricing-features">
+        <li><strong>3 team members</strong></li>
         <li><strong>5 applets</strong> hosted in your toolbox</li>
-        <li><strong>2 toolboxes</strong> &mdash; one work, one personal</li>
-        <li><strong>Unlimited team members</strong></li>
-        <li>Your team's branded portal</li>
+        <li><strong>2 toolboxes</strong>, one work, one personal</li>
+        <li>Your own team portal</li>
         <li>Real-time collaboration</li>
         <li>Prompt library + marketplace</li>
-        <li class="disabled">AI features (Plus only)</li>
       </ul>
-      <a href="https://app.my-app-hub.com/try" class="btn-secondary">Start free &mdash; no card</a>
+      <a href="https://app.my-app-hub.com/try" class="btn-secondary">Start free, no card</a>
     </div>
     <div class="pricing-card featured reveal">
-      <div class="plan-name">Plus <span class="pricing-badge">All AI</span></div>
-      <div class="price">$12 <span>/ month</span></div>
-      <div class="price-sub">Unlock AI &mdash; cancel anytime, no contracts.</div>
+      <div class="plan-name">Plus</div>
+      <div class="price">A$20 <span>/ month</span></div>
+      <div class="price-sub">For teams that have outgrown the free limits. Cancel anytime, no&nbsp;contracts.</div>
       <ul class="pricing-features">
+        <li><strong>Unlimited team members</strong></li>
         <li><strong>Unlimited applets &amp; toolboxes</strong></li>
-        <li>AI-powered file conversions</li>
-        <li>AI Applet Builder &mdash; describe a tool, get one</li>
-        <li>Generous monthly AI token budget</li>
         <li>Custom branding (your logo &amp; colours)</li>
         <li>Priority support</li>
         <li>Everything in Free, of course</li>
       </ul>
       <a href="https://api.my-app-hub.com/api/subscription/checkout-landing" class="btn-primary">Upgrade to Plus</a>
     </div>
+    <div class="pricing-card reveal">
+      <div class="plan-name">Managed</div>
+      <div class="price">A$450 <span>/ month</span></div>
+      <div class="price-sub">We run the platform, so nobody on your side has&nbsp;to.</div>
+      <ul class="pricing-features">
+        <li><strong>Hosting, uptime and backups</strong> are ours to worry about</li>
+        <li><strong>A named person to call</strong> when something breaks</li>
+        <li>Updates, monitoring and restores handled for you</li>
+        <li><strong>Covers the platform, not the applets your people build in it</strong></li>
+        <li>Development work quoted separately at A$220 per hour</li>
+      </ul>
+      <a href="mailto:hello@my-app-hub.com?subject=AppHub%20Managed" class="btn-secondary">Talk to us about Managed</a>
+    </div>
   </div>
-  <p class="pricing-fineprint reveal">No trial countdown, no auto-charge. Stay on Free as long as you like &mdash; upgrade only when AI becomes useful to you.</p>
+  <p class="pricing-fineprint reveal">All prices in Australian dollars. Managed is not a bulk-seat deal, it is what you pay for someone else to be accountable for the platform. It is invoiced rather than bought through a checkout, so it starts with an&nbsp;email.</p>
   <div class="pricing-note reveal">
-    <strong>Included in both plans:</strong> Prompt library, marketplace, version history, real-time collaboration, and dark&nbsp;mode.
+    <strong>Included in every plan:</strong> Prompt library, marketplace, version history, real-time collaboration, and dark&nbsp;mode.
   </div>
 </section>
 
@@ -1442,7 +1435,7 @@ footer { padding: 60px 40px 40px; max-width: 1200px; margin: 0 auto }
   <div class="cta-inner">
     <p class="section-label reveal">Get started</p>
     <h2 class="section-heading reveal">Give your team a place to&nbsp;build</h2>
-    <p class="section-sub reveal" style="margin:0 auto">5 applets, 2 toolboxes, unlimited team members. Set up in 30&nbsp;seconds. No credit card, no&nbsp;trial.</p>
+    <p class="section-sub reveal" style="margin:0 auto">3 team members, 5 applets, 2 toolboxes. Set up in 30&nbsp;seconds. No credit card, no&nbsp;trial.</p>
     <div class="cta-btns reveal" style="flex-direction: column; align-items: center; gap: 16px">
       <a href="https://app.my-app-hub.com/try" class="btn-primary cta-primary-large">Start your free toolbox</a>
       <a href="https://app.my-app-hub.com/login" class="cta-login-link">Already have an account? Log in</a>

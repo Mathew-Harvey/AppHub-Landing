@@ -253,7 +253,7 @@ function renderIndex(posts) {
     : `<div class="blog-empty"><h2>No posts yet</h2><p>Fresh writing from the AppHub team is on the way.</p></div>`;
 
   const title = 'Blog — AppHub';
-  const desc = 'Product updates, playbooks, and stories on building and sharing AI-powered tools with your team.';
+  const desc = 'Product updates, playbooks, and stories on building tools with any AI and sharing them with your team.';
   return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -277,7 +277,7 @@ ${nav()}
   <header class="blog-hero">
     <p class="section-label reveal">The AppHub Blog</p>
     <h1 class="reveal reveal-d1">Ideas for teams who<br><span class="gradient-text">build their own tools</span></h1>
-    <p class="reveal reveal-d2">Product updates, playbooks, and stories on building, sharing, and running AI-powered tools together.</p>
+    <p class="reveal reveal-d2">Product updates, playbooks, and stories on building tools with any AI, then sharing and running them together.</p>
   </header>
 </div>
 <main class="blog-main">
@@ -370,7 +370,7 @@ ${post.html}
 </article>
 <aside class="article-cta reveal">
   <h3>Ready to give your team a place to build?</h3>
-  <p>5 applets, 2 toolboxes, unlimited team members. Set up in 30 seconds — no credit card.</p>
+  <p>3 team members, 5 applets, 2 toolboxes. Set up in 30 seconds, no credit card.</p>
   <a href="https://app.my-app-hub.com/try" class="btn-primary">Start your free toolbox</a>
 </aside>
 ${footer()}
