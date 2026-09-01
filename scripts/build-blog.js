@@ -253,7 +253,7 @@ function renderIndex(posts) {
     : `<div class="blog-empty"><h2>No posts yet</h2><p>Fresh writing from the AppHub team is on the way.</p></div>`;
 
   const title = 'Blog — AppHub';
-  const desc = 'Product updates, playbooks, and stories on building and sharing tools with your team.';
+  const desc = 'Product updates, playbooks, and stories on building tools with any AI and sharing them with your team.';
   return `<!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -277,7 +277,7 @@ ${nav()}
   <header class="blog-hero">
     <p class="section-label reveal">The AppHub Blog</p>
     <h1 class="reveal reveal-d1">Ideas for teams who<br><span class="gradient-text">build their own tools</span></h1>
-    <p class="reveal reveal-d2">Product updates, playbooks, and stories on building, sharing, and running tools together.</p>
+    <p class="reveal reveal-d2">Product updates, playbooks, and stories on building tools with any AI, then sharing and running them together.</p>
   </header>
 </div>
 <main class="blog-main">
