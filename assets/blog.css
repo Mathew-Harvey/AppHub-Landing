@@ -294,6 +294,10 @@ footer { padding: 60px 40px 40px; max-width: 1120px; margin: 0 auto }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 8px }
 .footer-copy, .footer-origin { font-size: 13px; color: var(--muted) }
 .footer-origin { font-style: italic }
+/* "Made by andAgainSoftware", styled as the landing page's footer line */
+.footer-powered { font-size: 13px; color: var(--muted) }
+.footer-powered a { color: var(--text-secondary, var(--muted)); text-decoration: none; border-bottom: 1px dotted var(--border); transition: color .2s, border-color .2s }
+.footer-powered a:hover { color: var(--accent, var(--text)); border-bottom-color: var(--accent, var(--text)); text-decoration: none }
 
 /* === Responsive === */
 @media (max-width: 900px) {
