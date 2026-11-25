@@ -198,6 +198,7 @@ function footer() {
   </div>
   <div class="footer-bottom">
     <p class="footer-copy">&copy; 2026 AppHub</p>
+    <p class="footer-powered">Made by <a href="https://andagainsoftware.com/" target="_blank" rel="noopener">andAgainSoftware</a></p>
     <p class="footer-origin">Built in Western Australia</p>
   </div>
 </footer>`;
